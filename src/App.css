@@ -1,38 +1,28 @@
-.App {
-  text-align: center;
+:root { --border:#e5e7eb; --text:#111827; --muted:#4b5563; --bg:#ffffff; }
+*{ box-sizing:border-box; }
+body{ margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--text); }
+a{ color:inherit; }
+.page{ min-height:100vh; }
+.container{ max-width: 980px; margin: 0 auto; padding: 24px; }
+.header{ padding-top: 40px; padding-bottom: 10px; }
+.kicker{ margin:0 0 6px; color:var(--muted); font-size: 14px; }
+h1{ margin:0; font-size: 40px; letter-spacing:-0.02em; }
+.subtitle{ margin:10px 0 0; color:var(--muted); max-width: 650px; line-height:1.5; }
+.links{ margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap; }
+.btn{ display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:14px; text-decoration:none; }
+.btn:hover{ background:#f9fafb; }
+.btn.secondary{ background:#111827; color:#fff; border-color:#111827; }
+.btn.secondary:hover{ background:#0b1220; }
+.grid{ margin-top: 28px; display:grid; gap:14px; grid-template-columns: 1fr; }
+.card{ border:1px solid var(--border); border-radius:18px; padding:16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.card h2{ margin:0 0 8px; font-size:18px; }
+.muted{ margin:0; color:var(--muted); line-height:1.5; }
+.tag{ margin-top: 12px; font-size: 12px; color:var(--muted); }
+.about{ margin-top: 14px; }
+.footer{ margin: 26px 0 10px; font-size: 12px; }
+@media (min-width: 640px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width: 960px){
+  .grid{ grid-template-columns: repeat(3, 1fr); }
 }
