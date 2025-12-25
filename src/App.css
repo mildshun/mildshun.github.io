@@ -171,6 +171,30 @@ button{ font: inherit; }
 .heroRole{ background: linear-gradient(135deg, var(--accent), var(--accent-strong)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight:700; }
 .highlight{ color:var(--accent); font-weight:600; }
 
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+  }
+}
+
 .heroImageWrapper{
   position:relative;
   display:flex;

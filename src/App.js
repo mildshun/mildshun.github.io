@@ -10,6 +10,15 @@ const NAV = [
   { id: "contact", label: "Contact" },
 ];
 
+const GREETINGS = [
+    "Hello, I'm",
+    "你好，我是",
+    "Halo, saya",
+    "Hola, soy",
+    "Hei, olen",
+    "Hello, I'm",
+  ];
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -83,6 +92,61 @@ export default function App() {
       /* ignore */
     }
   }, [theme]);
+
+  // Hero Greeting Animation
+  const [typedText, setTypedText] = useState("");
+  const [greetIndex, setGreetIndex] = useState(0);
+  const [cycleCount, setCycleCount] = useState(0);
+  useEffect(() => {
+    let charIndex = 0;
+    let deleting = false;
+
+    const interval = setInterval(() => {
+      const current = GREETINGS[greetIndex];
+
+      if (!deleting) {
+        // typing
+        setTypedText(current.slice(0, charIndex + 1));
+        charIndex++;
+
+        if (charIndex === current.length) {
+          // if last greeting & first cycle → stop here
+          if (
+            greetIndex === GREETINGS.length - 1 &&
+            cycleCount === 0
+          ) {
+            clearInterval(interval);
+            return;
+          }
+
+          setTimeout(() => {
+            deleting = true;
+          }, 1200);
+        }
+      } else {
+        // deleting
+        setTypedText(current.slice(0, charIndex - 1));
+        charIndex--;
+
+        if (charIndex === 0) {
+          deleting = false;
+
+          setGreetIndex((prev) => {
+            const next = prev + 1;
+
+            if (next === GREETINGS.length) {
+              setCycleCount((c) => c + 1);
+              return 0;
+            }
+
+            return next;
+          });
+        }
+      }
+    }, deleting ? 60 : 100);
+
+    return () => clearInterval(interval);
+  }, [greetIndex, cycleCount]);
 
   // Projects data and show-more state
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -280,7 +344,16 @@ export default function App() {
             <div className="heroLeft">
               <p className="kicker">✨ Welcome to my portfolio</p>
               <h1 className="heroTitle">
-                Hi, I&apos;m <span className="accent">Darwin</span> 👋
+                <div className="typingLine">
+                  <span className="typing">
+                    {typedText}
+                    <span className="cursor">|</span>
+                  </span>
+                </div>
+
+                <div className="nameLine">
+                  <span className="accent">Darwin</span> 👋
+                </div>
               </h1>
               <p className="subtitle">
                 <span className="heroRole">Software, Data & AI Engineer</span> based in Taipei, Taiwan. I build <span className="highlight">reliable data pipelines</span>, <span className="highlight">backend services</span>, and <span className="highlight">automation solutions</span>.
