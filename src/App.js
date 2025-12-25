@@ -84,6 +84,147 @@ export default function App() {
     }
   }, [theme]);
 
+  // Projects data and show-more state
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const projects = [
+    {
+      title: 'Automating Anime Portrait to Multi-Layered Parts Decomposition',
+      link: 'https://drive.google.com/drive/folders/1bvwiFWTXXRWISg-c1_kTaM9Sxgx-flPP?usp=drive_link',
+      date: 'Feb 2024 - May 2024',
+      tags: 'Computer Vision · Image Segmentation · Image Inpainting',
+      summary: 'Automated pipeline for decomposing anime-style portraits into multi-layered, editable components for dataset creation and creative workflows.'
+    },
+    {
+      title: 'StyleSpire — Stable Diffusion Inpainting for Virtual Try-On',
+      link: 'https://drive.google.com/drive/folders/1GphM3ra2sof3Mgrzg3UHSD-sGO8l8D6Q?usp=drive_link',
+      date: 'Sep 2023 - Dec 2023',
+      tags: 'Computer Vision · Generative AI · Diffusion Models',
+      summary: 'A virtual fashion try-on system that applies new outfits while preserving pose and structure using inpainting and parsing.'
+    },
+    {
+      title: 'Market Basket Analysis for 7-Eleven',
+      link: 'https://drive.google.com/drive/folders/1B2cUB-eOsPHX-f_xOraGbqb7lynwUJsl?usp=drive_link',
+      date: 'May 2023 - Jun 2023',
+      tags: 'Data Mining · Customer Analytics',
+      summary: 'RFM and FP-Growth analyses to discover cross-sell opportunities and optimize inventory.'
+    },
+    {
+      title: 'Sentiment Classification Using Averaged Word2Vec',
+      link: 'https://drive.google.com/drive/folders/1X3TPDKgFdOASOW42-s5H6nYOpPp_sKbh?usp=drive_link',
+      date: 'Sep 2022 - Dec 2022',
+      tags: 'NLP · Machine Learning',
+      summary: 'Averaged Word2Vec embeddings with dense networks for efficient sentiment classification.'
+    },
+    {
+      title: 'Two-Step SQL Injection Prevention Using LSTM',
+      link: 'https://drive.google.com/drive/folders/1ScegQKPS12LJkiFfEHxkmj6zqqZoWmJ8?usp=drive_link',
+      date: 'Sep 2022 - Dec 2022',
+      tags: 'Cybersecurity · Deep Learning',
+      summary: 'Two-step detection combining keyword filtering and LSTM sequence classification with high F1 scores.'
+    }
+  ];
+
+  // Work experience data and show-more state
+  const [showAllExperience, setShowAllExperience] = useState(false);
+  const experiences = [
+    {
+      role: 'Backend Developer',
+      company: 'TAO Digital Taiwan',
+      location: 'Taipei, Taiwan',
+      date: 'Feb 2025 - Current',
+      bullets: [
+        'Built Databricks (Spark/Delta Lake) batch pipelines to sync and update records with third-party platforms.',
+        'Processed millions of records with validation, multi-field formatting, and correctness checks.',
+        'Implemented Java Spring Boot Kafka listeners and authored unit tests for reliable processing.'
+      ]
+    },
+    {
+      role: 'Software Developer',
+      company: 'Broalux Taiwan Limited',
+      location: 'Taipei, Taiwan',
+      date: 'Sept 2024 - Feb 2025',
+      bullets: [
+        'Built microservices for device-server communication for an IoT telemetry project.',
+        'Automated deployments with Ansible and Kubernetes; implemented Grafana dashboards.'
+      ]
+    },
+    {
+      role: 'AI Engineer Intern',
+      company: 'Pegatron Corporation',
+      location: 'Taipei, Taiwan',
+      date: 'Jun 2024 - Aug 2024',
+      bullets: [
+        'Developed a chatbot AI agent and backend APIs for user-agent communication.',
+        'Project won first place in the 2024 Pegatron Summer Internship competition.'
+      ]
+    },
+    {
+      role: 'Freelance Full Stack Developer',
+      company: 'CLV Mitra Indonesia',
+      location: 'Batam, Indonesia',
+      date: 'Sept 2021 - Aug 2024',
+      bullets: [
+        'Delivered delivery-integration web app with real-time order tracking and menu uploads.',
+        'Built a queue web board and OCR microservice for automated document scanning.'
+      ]
+    },
+    {
+      role: 'Flutter Developer Intern',
+      company: 'Remote Worker Indonesia',
+      location: 'Bandung, Indonesia',
+      date: 'Jun 2020 - Aug 2020',
+      bullets: [
+        'Implemented CRUD features for an education-sector information storage app using Flutter.'
+      ]
+    }
+  ];
+
+  // Certifications data
+  const certs = [
+    {
+      title: 'TensorFlow Developer Certificate',
+      issuer: 'TensorFlow',
+      issued: '09 Aug 2021',
+      expires: '09 Aug 2024',
+      link: 'https://www.credential.net/fa512e37-9008-42a4-98cd-9b67f5519ca6#acc.KUSTlsmZ'
+    },
+    {
+      title: 'Mathematics for Machine Learning',
+      issuer: 'Coursera',
+      issued: '25 Mar 2021',
+      expires: null,
+      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/T2CCW2HQZWLB'
+    },
+    {
+      title: 'TensorFlow: Data and Deployment',
+      issuer: 'Coursera',
+      issued: '14 Mar 2021',
+      expires: null,
+      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/HEHQKFCS6NNX'
+    },
+    {
+      title: 'DeepLearning.AI TensorFlow Developer',
+      issuer: 'Coursera',
+      issued: '13 Apr 2021',
+      expires: null,
+      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/E6KKXPH8DTTD'
+    },
+    {
+      title: 'Google IT Support',
+      issuer: 'Coursera',
+      issued: '13 Mar 2021',
+      expires: null,
+      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/3KHBE356EZUL'
+    },
+    {
+      title: 'Google IT Automation with Python',
+      issuer: 'Coursera',
+      issued: '14 Mar 2021',
+      expires: null,
+      link: 'https://www.coursera.org/account/accomplishments/specialization/certificate/MPBHW3ZM8YQA'
+    }
+  ];
+
   return (
     <div className={"page" + (theme === 'light' ? ' light' : '')}>
       <header className="topbar">
@@ -137,32 +278,34 @@ export default function App() {
         <section id="home" className="hero">
           <div className="container heroGrid">
             <div className="heroLeft">
-              <p className="kicker">Portfolio</p>
-              <h1>
-          Hi, I&apos;m <span className="accent">Darwin</span> 👋
+              <p className="kicker">✨ Welcome to my portfolio</p>
+              <h1 className="heroTitle">
+                Hi, I&apos;m <span className="accent">Darwin</span> 👋
               </h1>
               <p className="subtitle">
-          Software / Data Engineer based in Taipei, Taiwan. I build reliable data pipelines, backend services, and automation.
+                <span className="heroRole">Software, Data & AI Engineer</span> based in Taipei, Taiwan. I build <span className="highlight">reliable data pipelines</span>, <span className="highlight">backend services</span>, and <span className="highlight">automation solutions</span>.
               </p>
 
               <div className="ctaRow">
-          <button className="btn primary" onClick={() => scrollTo("contact")}>Contact Me</button>
-          <a className="btn" href="/resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
+                <button className="btn primary always-white" onClick={() => scrollTo("contact")}>Get In Touch</button>
+                <a className="btn" href="https://drive.google.com/file/d/1sRNJGZSYVPsqkCkVB8DG9bvEprqFQ0kH/view?usp=drive_link" target="_blank" rel="noreferrer">📄 Resume</a>
               </div>
 
               <div className="iconRow">
-          <a className="icon" href="https://github.com/mildshun" target="_blank" rel="noreferrer">GitHub</a>
-          <a className="icon" href="https://www.linkedin.com/in/darwingwn/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a className="icon" href="mailto:drwngwn@gmail.com">Email</a>
+                <a className="icon" href="https://github.com/mildshun" target="_blank" rel="noreferrer">🐙 GitHub</a>
+                <a className="icon" href="https://www.linkedin.com/in/darwingwn/" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+                <a className="icon" href="mailto:drwngwn@gmail.com">✉️ Email</a>
               </div>
             </div>
 
             <div className="heroRight">
-              <img
-            src="/profile.png"
-            alt="Darwin Gunawan"
-            className="heroImage"
-          />
+              <div className="heroImageWrapper">
+                <img
+                  src="/profile.png"
+                  alt="Darwin Gunawan"
+                  className="heroImage"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -170,19 +313,46 @@ export default function App() {
         {/* SECTIONS */}
         <section id="skills" className="section reveal">
           <div className="container">
-            <h2>Skills</h2>
-            <div className="grid">
-              <div className="card">
-                <h3>Data</h3>
-                <p>PySpark, Delta Lake, Databricks, SQL, S3</p>
+            <h2>Skills <span className="secEmoji">⚙️</span></h2>
+            <div className="skillsGridCards">
+              <div className="card skillCard">
+                <h3 className="skillCategory">Data & Analytics</h3>
+                <div className="skillList">
+                  <div className="skillItem"><span className="skillTag">🐍 Python</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '90%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🔥 PySpark</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '85%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🗄️ SQL</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '88%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">📊 Databricks / Delta</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '80%'}}/></div></div>
+                </div>
               </div>
-              <div className="card">
-                <h3>Backend</h3>
-                <p>FastAPI, .NET, Spring Boot, REST, Auth</p>
+
+              <div className="card skillCard">
+                <h3 className="skillCategory">Backend & APIs</h3>
+                <div className="skillList">
+                  <div className="skillItem"><span className="skillTag">☕ Java / Spring Boot</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '82%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">⚡ FastAPI</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '78%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🔁 Kafka</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '72%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🧪 Unit Testing</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '80%'}}/></div></div>
+                </div>
               </div>
-              <div className="card">
-                <h3>DevOps</h3>
-                <p>Docker, GitHub Actions, Ansible, Kubernetes</p>
+
+              <div className="card skillCard">
+                <h3 className="skillCategory">MLOps & DevOps</h3>
+                <div className="skillList">
+                  <div className="skillItem"><span className="skillTag">🐳 Docker</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '82%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">☸️ Kubernetes</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '70%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">⚙️ GitHub Actions</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '75%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🛠️ Ansible</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '68%'}}/></div></div>
+                </div>
+              </div>
+
+              <div className="card skillCard">
+                <h3 className="skillCategory">AI / ML</h3>
+                <div className="skillList">
+                  <div className="skillItem"><span className="skillTag">🧠 Machine Learning</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '80%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🔍 Computer Vision</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '78%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🌀 Diffusion Models</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '70%'}}/></div></div>
+                  <div className="skillItem"><span className="skillTag">🔤 NLP</span><div className="skillLevel"><div className="skillLevelFill" style={{width: '72%'}}/></div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -190,122 +360,59 @@ export default function App() {
 
         <section id="experience" className="section alt reveal">
           <div className="container">
-            <h2>Work Experience</h2>
-            <div className="stack">
-              <div className="card">
-                <h3>TAO Digital Taiwan — Backend Developer</h3>
-                <p className="muted">Taipei, Taiwan · Feb 2025 - Current</p>
-                <ul className="muted">
-                  <li>Worked in a data/AI team using Databricks (Spark/Delta Lake) to build batch pipelines that update and sync records with third-party platforms.</li>
-                  <li>Handled millions of records with validation, checks, and multi-field formatting.</li>
-                  <li>Built Java Spring Boot Kafka listeners and authored unit tests to ensure data processing correctness and reliability.</li>
-                </ul>
-              </div>
+            <h2>Work Experience <span className="secEmoji">💼</span></h2>
 
-              <div className="card">
-                <h3>Broalux Taiwan Limited — Software Developer</h3>
-                <p className="muted">Taipei, Taiwan · Sept 2024 - Feb 2025</p>
-                <ul className="muted">
-                  <li>Worked on a real-time data collection project using an IoT device for analog-to-digital conversion.</li>
-                  <li>Built microservices for device-server communication and set up automated deployments with Ansible and Kubernetes.</li>
-                  <li>Implemented a Grafana dashboard using JavaScript to visualize collected telemetry data.</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3>Pegatron Corporation — AI Engineer Intern</h3>
-                <p className="muted">Taipei, Taiwan · June 2024 – Aug 2024</p>
-                <ul className="muted">
-                  <li>Developed a chatbot AI agent that responds to user requests based on an answer-sheet format.</li>
-                  <li>Designed and implemented the backend API for user-agent communication.</li>
-                  <li>Project won first place in the 2024 Pegatron Summer Internship competition.</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3>CLV Mitra Indonesia — Freelance Full Stack Developer</h3>
-                <p className="muted">Batam, Indonesia · Sept 2021 – Aug 2024</p>
-                <ul className="muted">
-                  <li>Developed a web application for delivery integration with multiple third-party services, enabling real-time order tracking and menu uploads.</li>
-                  <li>Created a queue web board for customers to monitor order status and designed database flow processes.</li>
-                  <li>Built a microservice for OCR document scanning to automate data extraction and storage.</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3>Remote Worker Indonesia — Flutter Developer Intern</h3>
-                <p className="muted">Bandung, Indonesia · June 2020 - Aug 2020</p>
-                <ul className="muted">
-                  <li>Worked on a Flutter-based information storage project for an education-sector client.</li>
-                  <li>Implemented CRUD functionality and documented progress to support client knowledge-sharing initiatives.</li>
-                </ul>
-              </div>
+            <div className="timeline">
+              {experiences.slice(0, showAllExperience ? experiences.length : 3).map((ex, idx) => (
+                <div className="timelineItem" key={idx}>
+                  <div className="timelineDate">{ex.date}</div>
+                  <div className="timelineBody card">
+                    <h3>{ex.role} — {ex.company}</h3>
+                    <p className="muted">{ex.location}</p>
+                    <ul className="muted">
+                      {ex.bullets.map((b, i) => <li key={i}>{b}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              ))}
             </div>
+
+            {experiences.length > 3 && (
+              <div style={{ marginTop: 14 }}>
+                <button className="btn" onClick={() => setShowAllExperience((v) => !v)}>{showAllExperience ? 'Show fewer' : `Show ${experiences.length - 3} more`}</button>
+              </div>
+            )}
           </div>
         </section>
 
         <section id="projects" className="section reveal">
           <div className="container">
-            <h2>Projects</h2>
-            <div className="stack">
-              <div className="card">
-                <h3><a href="https://drive.google.com/drive/folders/1GphM3ra2sof3Mgrzg3UHSD-sGO8l8D6Q?usp=drive_link" target="_blank" rel="noreferrer" className="projectLink">StyleSpire — Stable Diffusion Inpainting for Virtual Try-On</a></h3>
-                <p className="muted"><strong>Sep 2023 - Dec 2023</strong></p>
-                <p className="muted"><strong>Computer Vision · Generative AI · Diffusion Models</strong></p>
-                <p className="muted">A virtual fashion try-on system that enables users to apply new outfits to images while preserving the subject's original pose and structure. Combines Stable Diffusion inpainting, human parsing, and pose estimation to generate realistic outfit transformations.</p>
-                <ul className="muted">
-                  <li>Automated outfit inpainting using Stable Diffusion</li>
-                  <li>Precise segmentation via Pixel-Wise Majority Voting (PWMV)</li>
-                  <li>Enhanced fashion element recognition using BLIP-2 image captioning</li>
-                  <li>Strong visual quality and pose consistency — e-commerce and personal styling applications</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3><a href="https://drive.google.com/drive/folders/1B2cUB-eOsPHX-f_xOraGbqb7lynwUJsl?usp=drive_link" target="_blank" rel="noreferrer" className="projectLink">Market Basket Analysis for 7-Eleven</a></h3>
-                <p className="muted"><strong>May 2023 - Jun 2023</strong></p>
-                <p className="muted"><strong>Data Mining · Customer Analytics · Association Rules</strong></p>
-                <p className="muted">Performed comprehensive customer and product analysis to discover purchasing patterns and product relationships.</p>
-                <ul className="muted">
-                  <li>RFM-AR metrics to segment customer behavior</li>
-                  <li>FP-Growth to discover frequent itemsets and association rules</li>
-                  <li>Revealed meaningful product relationships supporting cross-selling and promotion planning</li>
-                  <li>Insights for inventory optimization and retail decision-making</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3><a href="https://drive.google.com/drive/folders/1X3TPDKgFdOASOW42-s5H6nYOpPp_sKbh?usp=drive_link" target="_blank" rel="noreferrer" className="projectLink">Sentiment Classification Using Averaged Word2Vec</a></h3>
-                <p className="muted"><strong>Sep 2022 - Dec 2022</strong></p>
-                <p className="muted"><strong>NLP · Machine Learning · Text Classification</strong></p>
-                <p className="muted">Proposed a sentiment classification approach using averaged Word2Vec embeddings combined with a dense neural network to handle variable-length text.</p>
-                <ul className="muted">
-                  <li>Evaluated on IMDb movie review dataset — outperformed classical ML, LSTM, Doc2Vec, and rating-mapping approaches</li>
-                  <li>Higher accuracy with lower computational cost</li>
-                  <li>Improved generalization using a single vector representation per review</li>
-                  <li>Balances performance and efficiency for large-scale text classification</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h3><a href="https://drive.google.com/drive/folders/1ScegQKPS12LJkiFfEHxkmj6zqqZoWmJ8?usp=drive_link" target="_blank" rel="noreferrer" className="projectLink">Two-Step SQL Injection Prevention Using LSTM</a></h3>
-                <p className="muted"><strong>Sep 2022 - Dec 2022</strong></p>
-                <p className="muted"><strong>Cybersecurity · Deep Learning · Web Security</strong></p>
-                <p className="muted">Developed a two-step SQL injection detection system combining keyword filtering, blacklisting, and LSTM-based sequence classification.</p>
-                <ul className="muted">
-                  <li>Tested on 30,905 SQL queries — achieved F1 score of 99.53%</li>
-                  <li>Outperformed ten classical machine learning algorithms</li>
-                  <li>Fast inference (&lt; 1 ms per query) — practical for real-time web applications</li>
-                  <li>Demonstrates strong robustness against evolving SQLi attack patterns</li>
-                </ul>
-              </div>
+            <h2>Projects <span className="secEmoji">🚀</span></h2>
+            <div className="projectsGrid">
+              {projects.slice(0, showAllProjects ? projects.length : 4).map((p, i) => (
+                <div className="projectCard card" key={i}>
+                  <div className="projectHeader">
+                    <h3 className="projectTitle"><a className="projectLink" href={p.link} target="_blank" rel="noreferrer">{p.title}</a></h3>
+                    <div className="projectDate">{p.date}</div>
+                  </div>
+                  <div className="projectMeta">{p.tags}</div>
+                  <p className="muted">{p.summary}</p>
+                  <a className="projectLink2" href={p.link} target="_blank" rel="noreferrer">View Project →</a>
+                </div>
+              ))}
             </div>
+
+            {projects.length > 2 && (
+              <div style={{ marginTop: 14 }}>
+                <button className="btn" onClick={() => setShowAllProjects((v) => !v)}>{showAllProjects ? 'Show fewer' : `Show ${projects.length - 4} more`}</button>
+              </div>
+            )}
           </div>
         </section>
 
         <section id="education" className="section alt reveal">
           <div className="container">
-            <h2>Education</h2>
+            <h2>Education <span className="secEmoji">🎓</span></h2>
 
             <div className="stack">
               {/* NTUST */}
@@ -372,31 +479,38 @@ export default function App() {
 
         <section id="certification" className="section reveal">
           <div className="container">
-            <h2>Certifications</h2>
-            <div className="grid">
-              <div className="card">
-                <h3>MDM ETL Pipeline</h3>
-                <p className="muted">Delta merges, dynamic schema handling, S3 I/O, monitoring.</p>
-              </div>
-              <div className="card">
-                <h3>Badminton Store Web App</h3>
-                <p className="muted">Product catalog + admin dashboard (planned), FastAPI backend.</p>
-              </div>
-              <div className="card">
-                <h3>OPC UA Telemetry Collector</h3>
-                <p className="muted">C++ collector sending metrics to InfluxDB with Grafana dashboards.</p>
-              </div>
+            <h2>Certifications <span className="secEmoji">📜</span></h2>
+            <div className="certGrid">
+              {certs.map((c, i) => (
+                <div className="certCard card" key={i}>
+                  <div className="certHeader">
+                    <h3>{c.title}</h3>
+                    <span className="certIssuer">{c.issuer}</span>
+                  </div>
+                  <div className="certMeta">
+                    <span className="certDate">📅 {c.issued}</span>
+                    {c.expires && <span className="certExpiry">⏰ Expires: {c.expires}</span>}
+                    {!c.expires && <span className="certNoExpiry">∞ No expiry</span>}
+                  </div>
+                  <a className="certLink" href={c.link} target="_blank" rel="noreferrer">View Certificate →</a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         <section id="contact" className="section alt reveal">
           <div className="container">
-            <h2>Contact</h2>
-            <div className="card">
-              <p className="muted">Email: <a href="mailto:drwngwn@gmail.com">drwngwn@gmail.com</a></p>
-              <p className="muted">GitHub: <a href="https://github.com/mildshun" target="_blank" rel="noreferrer">mildshun</a></p>
-              <p className="muted">LinkedIn: <a href="https://www.linkedin.com/in/darwingwn/" target="_blank" rel="noreferrer">darwingwn</a></p>
+            <h2>Contact <span className="secEmoji">✉️</span></h2>
+            <div className="card contactCard">
+              <div className="contactRow">
+                <a className="contactBtn" href="mailto:drwngwn@gmail.com"><span>✉️</span><span>drwngwn@gmail.com</span></a>
+              </div>
+
+              <div className="contactRow">
+                <a className="contactBtn" href="https://github.com/mildshun" target="_blank" rel="noreferrer">🐙 GitHub</a>
+                <a className="contactBtn" href="https://www.linkedin.com/in/darwingwn/" target="_blank" rel="noreferrer">🔗 LinkedIn</a>
+              </div>
             </div>
           </div>
         </section>
