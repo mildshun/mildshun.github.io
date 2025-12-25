@@ -5,6 +5,16 @@
     <link rel="icon" type="image/png" sizes="192x192" href="%PUBLIC_URL%/logo192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if(!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+        if(t === 'light') document.documentElement.classList.add('light');
+        // set theme-color meta dynamically for mobile browser tab color
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if(meta) meta.setAttribute('content', t === 'light' ? '#ffffff' : '#000000');
+      } catch(e) {}
+    </script>
     <meta
       name="description"
       content="Web site created using create-react-app"
