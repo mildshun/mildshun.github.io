@@ -69,7 +69,7 @@ export default function HomePage() {
               </div>
 
               <div className="nameLine">
-                <span className="accent">Darwin</span>👋
+                <span className="accent">Darwin</span>dY`<
               </div>
             </h1>
             <p className="subtitle">
@@ -109,45 +109,6 @@ export default function HomePage() {
             <div className="heroImageWrapper">
               <img src="/profile.png" alt="Darwin Gunawan" className="heroImage" />
             </div>
-            <div className="storyStack">
-              {currentWork && (
-                <div className="card storyCard">
-                  <img src="/profile-code.png" alt="Current work" className="storyThumb" />
-                  <div>
-                    <p className="storyLabel">Current Work</p>
-                    <h3 className="storyTitle">
-                      {currentWork.role}, {currentWork.company}
-                    </h3>
-                    <p className="muted">
-                      Building Databricks/Spark pipelines and Kafka consumers with validation and automated tests.
-                    </p>
-                  </div>
-                </div>
-              )}
-
-              <div className="card storyCard">
-                <img src="/profile-education.png" alt="Education" className="storyThumb" />
-                <div>
-                  <p className="storyLabel">Highest Education</p>
-                  <h3 className="storyTitle">Master's in CS, NTUST</h3>
-                  <p className="muted">Multimedia Vision Computing Lab — focused on computer vision research.</p>
-                </div>
-              </div>
-
-              {highlightProject && (
-                <div className="card storyCard">
-                  <div className="storyThumb projectThumb">★</div>
-                  <div>
-                    <p className="storyLabel">Highlighted Project</p>
-                    <h3 className="storyTitle">{highlightProject.title}</h3>
-                    <p className="muted">{highlightProject.summary}</p>
-                    <a className="projectLink" href={highlightProject.drivelink} target="_blank" rel="noreferrer">
-                      View details
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
         </div>
       </section>
@@ -155,7 +116,7 @@ export default function HomePage() {
       <section id="skills" className="section reveal">
         <div className="container">
           <h2>
-            Skills <span className="secEmoji">🛠️</span>
+            Skills <span className="secEmoji">dY> Л,?</span>
           </h2>
           <div className="skillsGridCards">
             <div className="card skillCard">
@@ -277,6 +238,53 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section alt reveal">
+        <div className="container">
+          <h2>
+            Highlights <span className="secEmoji">★</span>
+          </h2>
+          <div className="storyGrid">
+            {currentWork && (
+              <div className="card storyCard">
+                <img src="/profile-code.png" alt="Current work" className="storyThumb" />
+                <div>
+                  <p className="storyLabel">Current Work</p>
+                  <h3 className="storyTitle">
+                    {currentWork.role}, {currentWork.company}
+                  </h3>
+                  <p className="muted">
+                    Building Databricks/Spark pipelines and Kafka consumers with validation and automated tests.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            <div className="card storyCard">
+              <img src="/profile-education.png" alt="Education" className="storyThumb" />
+              <div>
+                <p className="storyLabel">Highest Education</p>
+                <h3 className="storyTitle">Master's in CS, NTUST</h3>
+                <p className="muted">Multimedia Vision Computing Lab — focused on computer vision research.</p>
+              </div>
+            </div>
+
+            {highlightProject && (
+              <div className="card storyCard">
+                <div className="storyThumb projectThumb">★</div>
+                <div>
+                  <p className="storyLabel">Highlighted Project</p>
+                  <h3 className="storyTitle">{highlightProject.title}</h3>
+                  <p className="muted">{highlightProject.summary}</p>
+                  <a className="projectLink" href={highlightProject.drivelink} target="_blank" rel="noreferrer">
+                    View details
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -254,13 +254,6 @@ button{ font: inherit; }
 
 .heroImage:hover{ transform: translateY(-6px) }
 
-.storyStack{
-  margin-top: 20px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
 .storyCard{
   display:flex;
   gap:12px;
@@ -300,6 +293,15 @@ button{ font: inherit; }
 .storyTitle{
   margin:4px 0 6px;
   font-size:16px;
+}
+
+.storyGrid{
+  display:grid;
+  gap:14px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 800px){
+  .storyGrid{ grid-template-columns: repeat(3, 1fr); }
 }
 
 @keyframes pulse {
