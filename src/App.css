@@ -149,6 +149,12 @@ button{ font: inherit; }
 }
 .tagChip:hover{ background: rgba(255,255,255,0.06); }
 
+.btn.small{
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:13px;
+}
+
 @media (min-width: 900px){
   .navDesktop{ display:flex; }
   .menuBtn{ display:none; }
@@ -247,6 +253,54 @@ button{ font: inherit; }
 }
 
 .heroImage:hover{ transform: translateY(-6px) }
+
+.storyStack{
+  margin-top: 20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.storyCard{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:14px;
+}
+
+.storyThumb{
+  width:62px;
+  height:62px;
+  border-radius:12px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+.projectThumb{
+  width:62px;
+  height:62px;
+  border-radius:12px;
+  background: linear-gradient(135deg,var(--accent),var(--accent-strong));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  color:#fff;
+  flex-shrink:0;
+}
+
+.storyLabel{
+  margin:0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  color:var(--muted);
+}
+
+.storyTitle{
+  margin:4px 0 6px;
+  font-size:16px;
+}
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
