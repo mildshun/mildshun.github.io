@@ -23,7 +23,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/1QQ3ax-IAB3ObZkFF-kpvYqRcaMeg_Jrl/view?usp=drive_link",
     date: "Feb 2024 - May 2024",
-    tags: "Computer Vision \u00b7 Image Segmentation \u00b7 Image Inpainting",
+    tags: "Computer Vision \u00b7 Image Segmentation \u00b7 Research",
     summary:
       "Automated pipeline for decomposing anime-style portraits into multi-layered, editable components for dataset creation and creative workflows.",
   },
@@ -34,7 +34,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/19S6iARa2KOex2tWCI511eJuBUcuYUq3F/view?usp=drive_link",
     date: "Sep 2023 - Dec 2023",
-    tags: "Computer Vision \u00b7 Generative AI \u00b7 Diffusion Models",
+    tags: "Computer Vision \u00b7 Generative AI \u00b7 Research",
     summary:
       "A virtual fashion try-on system that applies new outfits while preserving pose and structure using inpainting and parsing.",
   },
@@ -45,7 +45,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/1M21y4i6HPEdl6cfoTPt5ePyKToSnnnb_/view?usp=drive_link",
     date: "May 2023 - Jun 2023",
-    tags: "Data Mining \u00b7 Customer Analytics",
+    tags: "Data Mining \u00b7 Data Analysis",
     summary:
       "RFM and FP-Growth analyses to discover cross-sell opportunities and optimize inventory.",
   },
@@ -68,7 +68,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/121wUlKnVV_6mgYaS_ahadID25wCpxCot/view?usp=drive_link",
     date: "Sep 2022 - Dec 2022",
-    tags: "NLP \u00b7 Machine Learning",
+    tags: "NLP \u00b7 Research",
     summary:
       "Averaged Word2Vec embeddings with dense networks for efficient sentiment classification.",
   },
@@ -79,7 +79,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/1DpiKLr5sS-QQvDowDqBcQCGiZe7Bh10T/view?usp=drive_link",
     date: "Sep 2022 - Dec 2022",
-    tags: "Cybersecurity \u00b7 Deep Learning",
+    tags: "Cybersecurity \u00b7 Deep Learning \u00b7 Research",
     summary:
       "Two-step detection combining keyword filtering and LSTM sequence classification with high F1 scores.",
   },
