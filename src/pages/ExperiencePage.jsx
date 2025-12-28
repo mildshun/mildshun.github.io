@@ -5,7 +5,7 @@ export default function ExperiencePage() {
     <section id="experience" className="section alt reveal">
       <div className="container">
         <h2>
-          Work Experience <span className="secEmoji">dY'¬</span>
+          Work Experience <span className="secEmoji">💼</span>
         </h2>
 
         <div className="timeline">
@@ -14,7 +14,7 @@ export default function ExperiencePage() {
               <div className="timelineDate">{ex.date}</div>
               <div className="timelineBody card">
                 <h3>
-                  {ex.role} ƒ?" {ex.company}
+                  {ex.role} — {ex.company}
                 </h3>
                 <p className="muted">{ex.location}</p>
                 <ul className="muted">
