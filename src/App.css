@@ -63,6 +63,7 @@ button{ font: inherit; }
   font-weight: 700;
   font-size: 18px;
   cursor:pointer;
+  text-decoration: none;
 }
 .brandDot{ color: var(--accent); }
 
@@ -75,6 +76,7 @@ button{ font: inherit; }
   padding: 10px 10px;
   border-radius: 12px;
   cursor:pointer;
+  text-decoration: none;
 }
 .navBtn:hover{ background: rgba(255,255,255,0.06); }
 
@@ -125,7 +127,27 @@ button{ font: inherit; }
   background: rgba(255,255,255,0.03);
   color: var(--text);
   cursor:pointer;
+  text-decoration: none;
 }
+
+/* Tag filter chips */
+.tagChips{ display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 16px; }
+.tagChip{
+  padding:6px 12px;
+  border-radius:999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text);
+  cursor:pointer;
+  font-size:13px;
+  text-decoration:none;
+}
+.tagChip.active{
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color:#fff;
+}
+.tagChip:hover{ background: rgba(255,255,255,0.06); }
 
 @media (min-width: 900px){
   .navDesktop{ display:flex; }
