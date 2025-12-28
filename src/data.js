@@ -34,7 +34,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/19S6iARa2KOex2tWCI511eJuBUcuYUq3F/view?usp=drive_link",
     date: "Sep 2023 - Dec 2023",
-    tags: "Computer Vision \u00b7 Generative AI \u00b7 Research",
+    tags: "Computer Vision \u00b7 AI \u00b7 Research",
     summary:
       "A virtual fashion try-on system that applies new outfits while preserving pose and structure using inpainting and parsing.",
   },
@@ -68,7 +68,7 @@ export const projects = [
     slidelink:
       "https://drive.google.com/file/d/121wUlKnVV_6mgYaS_ahadID25wCpxCot/view?usp=drive_link",
     date: "Sep 2022 - Dec 2022",
-    tags: "NLP \u00b7 Research",
+    tags: "Natural Language Processing \u00b7 Research",
     summary:
       "Averaged Word2Vec embeddings with dense networks for efficient sentiment classification.",
   },
@@ -186,41 +186,41 @@ export const certs = [
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/a75db95c-1f42-4dad-8bdf-f2209658efcd",
   },
   {
     title: "Data Engineering on AWS - Foundations",
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/5b4a1f1a-c4ad-43d8-a091-46dbc7d6b84a",
   },
   {
     title: "Developing Generative Artificial Intelligence Solutions",
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/f8a2cfc6-a8a8-44c1-afc9-8db231c92c43",
   },
   {
-    title: "Fundamentals of Analytics on AWS – Part 1",
+    title: "Fundamentals of Analytics on AWS - Part 1",
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/434a968c-0f73-4d55-bb05-ca7e5457ed42",
   },
   {
     title: "Fundamentals of Generative AI",
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/7a1eb7ae-7f51-4cb6-a3c5-a41914ab312a",
   },
   {
     title: "Introduction to Generative AI - Art of the Possible",
     issuer: "AWS Skill Builder",
     issued: "01 Dec 2025",
     expires: null,
-    link: "https://skillbuilder.aws/",
+    link: "https://skillbuilder.aws/022b2e86-9e4b-40ed-b6a9-d08b00dfe819",
   },
 ];
