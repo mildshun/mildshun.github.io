@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { projects } from "../data";
 
 export default function ProjectsPage() {
-  const [showAllProjects, setShowAllProjects] = useState(false);
   const [selectedTag, setSelectedTag] = useState("All");
+  const [showAllTags, setShowAllTags] = useState(false);
 
   const tags = useMemo(() => {
     const all = new Set();
@@ -16,6 +16,9 @@ export default function ProjectsPage() {
     );
     return ["All", ...Array.from(all)];
   }, []);
+
+  const visibleTags = showAllTags ? tags : tags.slice(0, 6);
+  const moreCount = Math.max(tags.length - 6, 0);
 
   const filtered = useMemo(() => {
     if (selectedTag === "All") return projects;
@@ -35,22 +38,24 @@ export default function ProjectsPage() {
         </h2>
 
         <div className="tagChips" aria-label="Filter by tag">
-          {tags.map((tag) => (
+          {visibleTags.map((tag) => (
             <button
               key={tag}
               className={`tagChip${selectedTag === tag ? " active" : ""}`}
-              onClick={() => {
-                setSelectedTag(tag);
-                setShowAllProjects(false);
-              }}
+              onClick={() => setSelectedTag(tag)}
             >
               {tag}
             </button>
           ))}
+          {tags.length > 6 && (
+            <button className="btn small" onClick={() => setShowAllTags((v) => !v)}>
+              {showAllTags ? "Show fewer tags" : `Show ${moreCount} more tags`}
+            </button>
+          )}
         </div>
 
         <div className="projectsGrid">
-          {filtered.slice(0, showAllProjects ? filtered.length : 4).map((p, i) => (
+          {filtered.map((p, i) => (
             <div className="projectCard card" key={i}>
               <div className="projectHeader">
                 <h3 className="projectTitle">
@@ -68,14 +73,6 @@ export default function ProjectsPage() {
             </div>
           ))}
         </div>
-
-        {filtered.length > 4 && (
-          <div style={{ marginTop: 14 }}>
-            <button className="btn" onClick={() => setShowAllProjects((v) => !v)}>
-              {showAllProjects ? "Show fewer" : `Show ${filtered.length - 4} more`}
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );
