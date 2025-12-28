@@ -295,13 +295,17 @@ button{ font: inherit; }
   font-size:16px;
 }
 
-.storyGrid{
-  display:grid;
-  gap:14px;
-  grid-template-columns: 1fr;
+.storyActions{
+  margin-top:10px;
 }
-@media (min-width: 800px){
-  .storyGrid{ grid-template-columns: repeat(3, 1fr); }
+
+.storyStack{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.storyCard{
+  border-left: 3px solid var(--accent);
 }
 
 @keyframes pulse {
