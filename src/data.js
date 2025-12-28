@@ -50,6 +50,18 @@ export const projects = [
       "RFM and FP-Growth analyses to discover cross-sell opportunities and optimize inventory.",
   },
   {
+    title:
+      "Optimizing Machine Learning Hyperparameters with Evolutionary Algorithm",
+    drivelink:
+      "https://drive.google.com/drive/folders/13hFUjrXMOddYKdhl9LDMKT2AhQEtsyo8?usp=drive_link",
+    slidelink:
+      "https://drive.google.com/file/d/1tj8nrzssvyBzusljSaOvYHTl--c7dW0p/view?usp=drive_link",
+    date: "Feb 2023 - Jun 2023",
+    tags: "Machine Learning \u00b7 Data Analysis \u00b7 Research",
+    summary:
+      "Comparative study using evolutionary hyperparameter optimization for Decision Trees and Linear SVMs on breast cancer and medical insurance datasets.",
+  },
+  {
     title: "Sentiment Classification Using Averaged Word2Vec",
     drivelink:
       "https://drive.google.com/drive/folders/1X3TPDKgFdOASOW42-s5H6nYOpPp_sKbh?usp=drive_link",
